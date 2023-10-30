@@ -1,3 +1,12 @@
+/******************************************************************/
+/* NAME : VEYSEL TOPRAK
+*  ID   : 124332198
+*  EMAIL: vtoprak@myseneca.ca
+*  DATE : 13/10/2023
+*
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments*/
+/**********************************************************************/
 /***********************************************************************
 // OOP244 Workshop #5 lab (part 1): tester program
 //
@@ -20,7 +29,7 @@ namespace sdds {
     void Flight::emptyPlane() {
         m_passengers = 0;
         m_fuel = 0;
-        strcpy(m_title , "EmptyPlane");
+        strcpy(m_title, "EmptyPlane");
     }
 
     // New Flight
@@ -33,7 +42,7 @@ namespace sdds {
             fuel <= FuelTankCapacity) {
             m_passengers = passengers;
             m_fuel = fuel;
-            strcpy(m_title,title);
+            strcpy(m_title, title);
         }
     }
     std::ostream& Flight::display() const {
@@ -63,7 +72,7 @@ namespace sdds {
             cout << " Flight  |  Low Fuel       ";
             cout << " ";
             cout.width(10);
-            cout << (const char *)(*this);
+            cout << (const char*)(*this);
             cout << " | ";
             cout << "Pass: ";
             cout.width(10);
@@ -79,5 +88,150 @@ namespace sdds {
         }
         return cout;
     }
+    Flight::operator bool() const
+    {
+        return m_passengers > 0 && m_fuel > (m_passengers * 600);
+    }
+
+    Flight::operator int() const
+    {
+        return m_passengers;
+    }
+
+    Flight::operator double() const
+    {
+        return m_fuel;
+    }
+
+    Flight::operator const char* () const
+    {
+        return m_title;
+    }
+    bool Flight::operator~ () const
+    {
+        return m_passengers == 0;
+        
+    }
+
+    Flight& Flight::operator+= (double fuel)
+    {
+        if (m_fuel > 0 && m_fuel < FuelTankCapacity)
+        {
+            m_fuel += fuel;
+            if (m_fuel > FuelTankCapacity)
+            {
+                m_fuel = FuelTankCapacity;
+            }
+        }
+        return *this;
+    }
+    Flight& Flight::operator+= (int passenger)
+    {
+        if (m_passengers > 0 && m_passengers < Boen747Capacity)
+        {
+            m_passengers += passenger;
+            if (m_passengers > Boen747Capacity)
+            {
+                m_passengers = Boen747Capacity;
+            }
+        }
+        return *this;
+    }
+    Flight& Flight::operator-= (double fuel)
+    {
+        if (fuel > 0 && m_fuel > 0)
+        {
+            m_fuel -= fuel;
+            if (m_fuel < 0)
+            {
+                m_fuel = 0;
+            }
+        }
+        return *this;
+    }
+    Flight& Flight::operator-= (int passenger)
+    {
+        if (passenger > 0 && m_passengers > 0)
+        {
+            m_passengers -= passenger;
+            if (m_passengers < 0)
+            {
+                m_passengers = 0;
+            }
+        }
+        return *this;
+    }
+    Flight& Flight::operator<< (Flight& flight)
+    {
+        if (m_passengers > 0 && m_passengers < Boen747Capacity &&
+            int(flight.m_passengers) && int(m_passengers))
+        {
+            m_passengers = m_passengers + flight.m_passengers;
+            if (m_passengers > Boen747Capacity)
+            {
+                flight.m_passengers -= (m_passengers - Boen747Capacity);
+                m_passengers = Boen747Capacity;
+            }
+            else
+            {
+                flight.m_passengers = 0;
+            }
+        }
+        return *this;
+    }
+    Flight& Flight::operator>> (Flight& flight)
+    {
+        if (m_passengers > 0 && m_passengers < Boen747Capacity &&
+            int(flight.m_passengers) && int(m_passengers))
+        {
+            flight.m_passengers = m_passengers + flight.m_passengers;
+            if (flight.m_passengers > Boen747Capacity)
+            {
+                m_passengers = (flight.m_passengers - Boen747Capacity);
+                flight.m_passengers = Boen747Capacity;
+            }
+            else
+            {
+                m_passengers = 0;
+            }
+        }
+        return *this;
+    }
+    int Flight::operator+ (Flight& flight)
+    {
+        int result = 0;
+        if (int(m_passengers) && int(flight.m_passengers))
+        {
+            result = m_passengers + flight.m_passengers;
+        }
+        return result;
+    }
+    int operator+= (int& value, const Flight& flight)
+    {
+        if (flight.m_passengers > 0)
+        {
+            value = value + flight.m_passengers;
+        }
+        return value;
+    }
+    Flight& Flight::operator= (int passenger)
+    {
+        m_passengers = passenger;
+        return *this;
+    }
+    Flight& Flight::operator= (double fuel)
+    {
+        m_fuel = fuel;
+        return *this;
+    }
+    Flight& Flight::operator= (Flight& flight)
+    {
+        m_passengers = flight.m_passengers;
+        m_fuel = flight.m_fuel;
+        strcpy(m_title, flight.m_title);
+        flight.emptyPlane();
+        return *this;
+    }
 
 }
+

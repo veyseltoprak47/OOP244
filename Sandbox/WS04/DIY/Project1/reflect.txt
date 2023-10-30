@@ -1,0 +1,31 @@
+/******************************************************************/
+/* NAME : VEYSEL TOPRAK
+*  ID   : 124332198
+*  EMAIL: vtoprak@myseneca.ca
+*  DATE : 10/10/2023
+*
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments*/
+/******************************************************************/
+
+-REFLECTION PART-
+
+Learning Objective:
+•	Create default and overloaded constructor
+•	Create destructors
+•	Initialize class member variables
+•	Release member pointers
+
+Constructor is created with same name of class and could take argument or created with no arguments.
+I created many constructors for workshop 4 with or without arguments. Constructor without arguments
+is employed to set member variables to nullptr or zero. On the other hand, destructor is utilized 
+to release memory that is created dynamically. Otherwise, it brings about memory leak having 
+serious impact on the application performance. 
+
+I declared member variable in the class as a private and initialize it through member methods. 
+This is safer to keep class data private to other class. Besides, it facilitates allocate memory 
+dynamically. For example, I created a pointer in the class and point it to character array
+based on given information. It allows me to use memory more wisely. 
+However, it comes with responsibility that deallocate memory manually. 
+Therefore, I employed destructor to release pointer and gave back the memory I utilized.
+
