@@ -1,0 +1,23 @@
+/* NAME : VEYSEL TOPRAK
+*  ID   : 124332198
+*  EMAIL: vtoprak@myseneca.ca
+*  DATE : 11/24/2023
+*
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments */
+/******************************************************************/
+
+Upon completion of this workshop, I gained practical insights into various key concepts and 
+techniques within object-oriented programming.A fundamental principle I applied pertains to the
+Rule of Three, particularly when dealing with derived classes managing resources. This rule 
+underscores the importance of defining a custom destructor, copy constructor, and 
+copy assignment operator, particularly in scenarios involving dynamically allocated memory. 
+The implementation of this rule, especially within the context of derived classes, 
+significantly deepened my comprehension of resource management in object-oriented programming.
+
+However, a notable challenge arose in grasping the intricacies of deep copying and 
+memory management. The meticulous application of the Rule of Three, particularly within
+a derived class, necessitated an attention to detail. Ensuring the proper copying and 
+release of dynamically allocated memory, and preventing memory leaks, demanded careful scrutiny 
+of every code snippet.
+
