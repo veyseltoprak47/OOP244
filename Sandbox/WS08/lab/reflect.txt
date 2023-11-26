@@ -1,0 +1,45 @@
+/******************************************************************/
+/* NAME : VEYSEL TOPRAK
+*  ID   : 124332198
+*  EMAIL: vtoprak@myseneca.ca
+*  DATE : 11/17/2023
+*
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments*/
+/******************************************************************/
+
+During this week's workshop, I demonstrated my proficiency in defining pure virtual functions,
+emphasizing their crucial role in abstract classes. Comprehending the concept was pivotal as 
+it allowed me to design adaptable class hierarchies, where derived classes must implement 
+these virtual functions, ensuring specific behavior while maintaining a unified interface.
+
+The creation of abstract base classes emerged as a significant aspect of the workshop. 
+I learned how abstract classes act as templates for derived classes, offering 
+a common interface while permitting customization through virtual functions.
+
+A central theme of the workshop was implementing behavior using virtual functions. 
+I gained insight into the power of polymorphism, enabling objects from diverse classes 
+to be treated uniformly through their base class pointers. This dynamic binding 
+mechanism not only improved code readability but also facilitated maintenance
+ by allowing seamless modifications in derived classes.
+
+Distinguishing between an abstract base class and a concrete class was a critical lesson.
+ An abstract base class contains one or more pure virtual functions, rendering 
+it incomplete and unsuitable for instantiation. In contrast, concrete classes 
+provide implementations for all inherited virtual functions, making them complete and
+ ready for object creation.
+
+Upon reflection, I acknowledge the initial challenges I faced in grasping the concept of pure
+ virtual functions and their implementation in abstract classes. Nevertheless, 
+overcoming these challenges not only honed my problem-solving skills but also underscored 
+the importance of persistence in mastering intricate programming paradigms.
+
+In conclusion, this workshop has significantly elevated my proficiency in creating 
+abstract classes, implementing polymorphic behavior, and discerning between abstract and
+ concrete classes. I am confident that these skills will prove invaluable in my future endeavors.
+
+
+
+
+
+
